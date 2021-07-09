@@ -12,6 +12,15 @@ class Convolve {
     Convolve(int Dim): MatDim(Dim) {
       // Dim of Convolvd mat = dim of convolution matrix - dim of convolution kernel +1
       CvdMDim = MatDim - Kdim + 1;
+      std::cout<<"Dimension of Convolved Matrix: "<<CvdMDim<<" x "<<CvdMDim<<std::endl;
+      std::cout<<"Kernel dimensions to convolve is 3 x 3:"<<std::endl;
+      std::cout<<"Kernel used:"<<std::endl;
+      for (int i = 0; i < 3; ++i) {
+        for (int j = 0; j < 3; ++j) {
+	  std::cout<<Kernel[i][j]<<" ";
+	}
+	std::cout<<std::endl;
+      }
       Matrx = new int*[MatDim];
       for (int i = 0; i < MatDim; ++i) {
         Matrx[i] = new int[MatDim];
